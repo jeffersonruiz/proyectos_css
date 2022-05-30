@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 200px;
+        }
+
+        .container hr {
+            width: 10px;
+            margin-left: 0;
+        }
+        
+        #counter {
+            color: white;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="counter">Cargando</div>
+        <hr id="hr" />
+    </div>
+    <script>
+        let counts = setInterval(updated, 400);
+        let upto = 0;
+        let width = 0;
+        function updated() {
+            const counter = document.getElementById("counter");
+            const hr = document.getElementById("hr");
+            ++upto;
+            counter.innerHTML = "Cargando " + upto + "%";
+            hr.style.width = upto + "%";
+            if (upto === 100) {
+                clearInterval(counts);
+                counter.innerHTML = "ERROR!";
+            }
+        }
+    </script>
+</body>
+</html>

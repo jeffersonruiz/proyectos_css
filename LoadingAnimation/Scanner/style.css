@@ -1,0 +1,24 @@
+.scanner {
+    color: #252839;
+    font-size: 4rem;
+    position: absolute;
+}
+
+.scanner h1::before{
+    content: "Cargando...";
+    position: absolute;
+    width: 0;
+    border-right: 4px solid #17feff;
+    overflow: hidden;
+    color: #17feff;
+    animation: load 4s linear infinite;
+}
+
+@keyframes load {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    60%, 80% {
+        width: 100%;
+    }
+}
